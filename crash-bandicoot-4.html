@@ -93,13 +93,33 @@
       <p><strong>SKU:</strong> 10033036</p>
 
       <div class="add-to-cart">
-        <button>AÑADIR AL CARRITO</button>
+        <button id="btn-carrito">AÑADIR AL CARRITO</button>
         <p>Disponible en 7 tiendas<br>Arequipa, Cusco, Lima</p>
       </div>
     </div>
   </div>
 
   <img src="imagen6.png" class="logo" alt="Logo tienda">
+      <script>
+  document.getElementById("btn-carrito").addEventListener("click", () => {
+    const producto = {
+      nombre: "Crash Bandicoot 4",
+      precio: 179.90,
+      imagen: "imagen4.png"
+    };
+
+    // Obtener carrito actual del localStorage (o inicializar uno nuevo)
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    // Agregar el nuevo producto
+    carrito.push(producto);
+
+    // Guardar nuevamente en localStorage
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    alert("✅ Producto añadido al carrito.");
+  });
+</script>
 
 </body>
 </html>
