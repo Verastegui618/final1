@@ -93,13 +93,32 @@
       <p><strong>SKU:</strong> 10033037</p>
 
       <div class="add-to-cart">
-        <button>AÑADIR AL CARRITO</button>
+        <button id="btn-carrito">AÑADIR AL CARRITO</button>
         <p>Disponible en 5 tiendas<br>Trujillo, Lima</p>
       </div>
     </div>
   </div>
 
   <img src="imagen6.png" class="logo" alt="Logo tienda">
+  <script>
+  document.getElementById("btn-carrito").addEventListener("click", () => {
+    const producto = {
+      nombre: "Silent Hill 2 (PS5)",
+      precio: 169.90,
+      imagen: "imagen5.png"
+    };
+
+
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    
+    carrito.push(producto);
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    alert("✅ Producto añadido al carrito.");
+  });
+</script>
 
 </body>
 </html>
