@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Carrito - FiaGamer</title>
   <style>
     body {
@@ -38,6 +38,29 @@
       right: 10px;
       width: 60px;
     }
+
+    /* Estilos para el botón "Hacer compra" */
+    #btn-compra {
+      background-color: #ff4757;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-size: 18px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 5px 15px rgba(255, 71, 87, 0.5);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      display: block;
+      margin: 20px auto 0 auto;
+      width: max-content;
+      text-align: center;
+    }
+
+    #btn-compra:hover {
+      background-color: #ff6b81;
+      box-shadow: 0 8px 25px rgba(255, 107, 129, 0.7);
+    }
   </style>
 </head>
 <body>
@@ -45,7 +68,10 @@
   <h1>🛒 Tu carrito de compras</h1>
   <div id="carrito-container"></div>
 
-  <img src="imagen6.png" alt="Logo FiaGamer" class="logo">
+  <!-- Botón para hacer la compra -->
+  <button id="btn-compra">Hacer compra</button>
+
+  <img src="imagen6.png" alt="Logo FiaGamer" class="logo" />
 
   <script>
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -53,6 +79,10 @@
 
     if (carrito.length === 0) {
       contenedor.innerHTML = "<p>No has añadido ningún producto aún.</p>";
+      // Si no hay productos, deshabilitamos el botón
+      document.getElementById("btn-compra").disabled = true;
+      document.getElementById("btn-compra").style.opacity = "0.5";
+      document.getElementById("btn-compra").style.cursor = "not-allowed";
     } else {
       carrito.forEach(producto => {
         const div = document.createElement("div");
@@ -67,7 +97,22 @@
         contenedor.appendChild(div);
       });
     }
-  </script>
 
+    // Evento para el botón "Hacer compra"
+    document.getElementById("btn-compra").addEventListener("click", () => {
+      if (carrito.length === 0) {
+        alert("No hay productos en el carrito para comprar.");
+      } else {
+        alert("¡La compra se ha realizado correctamente!");
+        // Opcional: limpiar carrito y actualizar vista
+        localStorage.removeItem("carrito");
+        contenedor.innerHTML = "<p>No has añadido ningún producto aún.</p>";
+        const btn = document.getElementById("btn-compra");
+        btn.disabled = true;
+        btn.style.opacity = "0.5";
+        btn.style.cursor = "not-allowed";
+      }
+    });
+  </script>
 </body>
 </html>
