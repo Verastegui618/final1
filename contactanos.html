@@ -101,7 +101,7 @@
     </div>
 
     <div class="formulario">
-      <form action="#" method="post">
+      <form id="contacto-form">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" required>
 
@@ -118,5 +118,12 @@
 
   <img src="imagen6.png" alt="Logo FiaGamer" class="logo">
 
+  <script>
+    document.getElementById('contacto-form').addEventListener('submit', function(e) {
+      e.preventDefault(); // Evita que recargue la página
+      alert('✅ ¡Tu mensaje fue enviado con éxito!');
+      this.reset(); // Limpia el formulario
+    });
+  </script>
 </body>
-</ht
+</html>
