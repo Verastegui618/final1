@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="tienda.css">
 </head>
 <body>
+  <!-- Barra de navegación -->
   <header>
     <div class="barra">
       <a href="index.html" class="icon" style="text-decoration: none; color: inherit;">🏠</a>
@@ -16,29 +17,41 @@
     </div>
   </header>
 
+  <!-- Filtros -->
+  <section class="filtros">
+    <h2>🎮 Filtrar por:</h2>
+    <div class="filtro-botones">
+      <button onclick="filtrar('todos')">Todos</button>
+      <button onclick="filtrar('terror')">Terror</button>
+      <button onclick="filtrar('aventura')">Aventura</button>
+      <button onclick="filtrar('diversion')">Diversión</button>
+    </div>
+  </section>
+
+  <!-- Productos -->
   <main class="contenedor">
-    <a href="elden-ring.html" style="text-decoration: none; color: inherit;">
+    <a href="elden-ring.html" style="text-decoration: none; color: inherit;" data-categoria="aventura">
       <div class="producto">
         <img src="imagen2.png" alt="Elden Ring">
         <p>Disponible<br>Elden Ring: Shadow of the Erdtree Edition (PS5)<br>Rating: 0%<br>S/379.90</p>
       </div>
     </a>
 
-    <a href="resident-evil-3.html" style="text-decoration: none; color: inherit;">
+    <a href="resident-evil-3.html" style="text-decoration: none; color: inherit;" data-categoria="terror">
       <div class="producto">
         <img src="imagen3.png" alt="Resident Evil 3">
         <p>Disponible<br>Resident Evil 3 (PS5)<br>Remake que te regresará toda la nostalgia y el terror del clásico.<br>S/179.90</p>
       </div>
     </a>
 
-    <a href="crash-bandicoot-4.html" style="text-decoration: none; color: inherit;">
+    <a href="crash-bandicoot-4.html" style="text-decoration: none; color: inherit;" data-categoria="diversion">
       <div class="producto">
         <img src="imagen4.png" alt="Crash Bandicoot 4">
         <p>Disponible<br>Crash Bandicoot 4: It's About Time (PS4)<br>Rating: 0%<br>S/179.90</p>
       </div>
     </a>
 
-    <a href="silent-hill-2.html" style="text-decoration: none; color: inherit;">
+    <a href="silent-hill-2.html" style="text-decoration: none; color: inherit;" data-categoria="terror">
       <div class="producto">
         <img src="imagen5.png" alt="Silent Hill 2">
         <p>Disponible<br>Silent Hill 2 (PS5)<br>Rating: 0%<br>S/329.90</p>
@@ -51,5 +64,19 @@
   <footer class="footer">
     © 2025 Fia Gamer. Todos los derechos reservados. | Desarrollado con ❤️
   </footer>
+
+  <script>
+    function filtrar(categoria) {
+      const productos = document.querySelectorAll('main.contenedor a');
+      productos.forEach(producto => {
+        if (categoria === 'todos') {
+          producto.style.display = 'block';
+        } else {
+          const tipo = producto.getAttribute('data-categoria');
+          producto.style.display = tipo === categoria ? 'block' : 'none';
+        }
+      });
+    }
+  </script>
 </body>
 </html>
