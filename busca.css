@@ -1,0 +1,152 @@
+/* busca.css */
+
+body {
+  background-color: #ff0000; /* fondo rojo */
+  color: #000000; /* texto negro */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Barra de navegación */
+header .barra {
+  background-color: #cc0000; /* rojo oscuro para la barra */
+  padding: 10px 20px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  border-bottom: 2px solid #000000; /* línea negra debajo */
+}
+
+header .barra .icon {
+  color: #000000; /* iconos negros */
+  font-size: 1.5rem;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+header .barra .icon:hover {
+  color: #333333; /* gris oscuro al pasar mouse */
+}
+
+/* Buscador */
+.buscador-container {
+  margin: 20px auto;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  padding: 0 15px;
+}
+
+#buscador {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1.1rem;
+  border: 2px solid #000000;
+  border-radius: 6px;
+  background-color: #cc0000;
+  color: #000000;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+#buscador::placeholder {
+  color: #330000;
+}
+
+#buscador:focus {
+  border-color: #333333;
+}
+
+/* Productos */
+.contenedor {
+  max-width: 1000px;
+  margin: 30px auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  padding: 0 15px;
+}
+
+.producto {
+  background-color: #cc0000;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  width: 220px;
+  text-align: center;
+  color: #000000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.producto:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #000000;
+}
+
+.producto img {
+  width: 100%;
+  border-bottom: 1px solid #000000;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Logo */
+.logo {
+  display: block;
+  margin: 40px auto;
+  max-width: 150px;
+}
+
+/* Footer */
+.footer-gamer {
+  background-color: #cc0000;
+  color: #000000;
+  padding: 25px 15px 15px;
+  font-size: 0.9rem;
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-col h3,
+.footer-col h4 {
+  color: #000000;
+  margin-bottom: 12px;
+}
+
+.footer-col p {
+  margin: 6px 0;
+}
+
+.social-icons a {
+  color: #000000;
+  margin-right: 12px;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #333333;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #000000;
+  padding-top: 15px;
+  font-size: 0.8rem;
+  color: #330000;
+}
+
+.resaltado {
+  color: #000000;
+  font-weight: bold;
+}
