@@ -47,3 +47,23 @@ button {
 button:hover {
   background-color: #0077cc;
 }
+.topbar {
+  background-color: #a0002b;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.volver-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  gap: 8px;
+}
+
+.volver-link img {
+  width: 24px;
+  height: 24px;
+}
