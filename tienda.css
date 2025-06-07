@@ -65,3 +65,56 @@ footer.footer {
 main {
   flex: 1;
 }
+.footer-gamer {
+  background-color: #111;
+  color: white;
+  font-family: 'Courier New', monospace;
+  padding: 40px 20px 20px 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 20px;
+}
+
+.footer-col {
+  flex: 1 1 200px;
+  min-width: 220px;
+}
+
+.footer-col h3, .footer-col h4 {
+  margin-top: 0;
+  color: #fff;
+}
+
+.resaltado {
+  color: #ffcc00;
+}
+
+.footer-col p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 20px;
+  margin-right: 10px;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 12px;
+  color: #aaa;
+}
