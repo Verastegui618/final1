@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Encuentra al Gato</title>
+  <link rel="stylesheet" href="juego.css">
+</head>
+<body>
+  <h1>🐱 ¡Encuentra al Gato! 🏛️</h1>
+  <div id="game-container">
+    <img id="coliseo" src="coliseo.png" alt="Fondo Coliseo">
+    <img id="gato" src="gato.png" alt="Gato escondido">
+  </div>
+  <div class="info">
+    <p>⏱️ Tiempo: <span id="tiempo">10</span>s</p>
+    <p>❤️ Vidas: <span id="vidas">10</span></p>
+    <p>⭐ Puntos: <span id="puntos">0</span></p>
+  </div>
+  <button onclick="iniciarJuego()">Iniciar Juego</button>
+
+  <!-- Asegúrate que este script esté al FINAL -->
+  <script src="juego.js"></script>
+</body>
+</html>
